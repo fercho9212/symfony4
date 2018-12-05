@@ -1,0 +1,27 @@
+php bin/console server:run  # corre el serivor
+
+php bin/console controller  #crea un controlador
+php bin/console debug:router #visualiza todas las rutas
+php app/console router:debug article_show   # información de una uníca ruta
+
+
+php bin/console make:entity #Generar una nueva entidad
+php bin/console generate:doctrine:crud   #Genera un crud
+
+
+php bin/console doctrine:database # Crea la base de datos
+php bin/console doctrine:schema:create #Crea las tablas de entity
+php bin/console doctrine:database:drop --force # Borra la base de datos
+php bin/console doctrine:schema:update --force Si a la clase anterior Ejemplo.php añadiéramos un campo más y ejecutamos el comando php bin/console doctrine:schema:update --force actualizará la base de datos añadiendo una columna con el nuevo campo.
+php bin/console doctrine:database:create #Crea una base de datos
+php bin/console doctrine:database:drop --force #borra una base de datos
+php bin/console make:crud    --Genera un crud para la base de datos
+
+
+  
+#Generando entidades apartir de una base de datos
+1) Configurar archivo .env
+ php bin/console doctrine:mapping:import 'App\Entity' annotation --path=src/Entity  #Crea las entidades con los respectivos atributos
+ php bin/console make:entity --regenerate App                                       #genera set y gets
+ 
+ 
