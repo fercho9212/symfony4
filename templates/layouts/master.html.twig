@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            {% block titulo%} INICIO {% endblock %}-Master en PHP Ferney Jerez
+        </title>
+    <head>
+    <body>
+        <div id="header">
+            {% block cabecera%}
+                <h1>cabecera del contenido de la plantilla</h1>
+            {% endblock %}
+
+            <section id="contenido">
+                {% block contenido %}
+                    <p>contenido pro defecto</p>
+                {% endblock %}
+            </section>
+        </div>
+    </body>
+</html>

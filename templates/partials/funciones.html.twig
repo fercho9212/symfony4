@@ -1,0 +1,26 @@
+    {% if animales|length >=0 %}
+        <ul>
+            {% for animal in animales %}
+                <li>{{animal}}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% for i in 0..10 %}
+        {{i}}</br>
+    {% endfor %}
+
+    <br><br><h1>Funciones predefinidas</h1>
+    {#Funciones predefinidas #}
+    {{ min([9,11,6,88,2])}}
+    <br>
+    {{ random(aves)}}
+    <br>
+    <br><br><br>
+    {% for i in range(0,100,5)%}
+        {{i}} <br/>
+    {% endfor %}
+
+    <h1>Extenciones personalizadas</h1>
+
+    {{multiplicar(2)|raw}}

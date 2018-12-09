@@ -1,0 +1,35 @@
+{% extends 'layouts/master.html.twig' %}
+
+{% block cabecera %}
+    {{parent()}}
+    <h1>Animalessssssssss</h1>
+{% endblock %}
+
+{% block contenido %}
+    {# <h1>{{title}}</h1> #}
+    {% set perro ='Pastor aleman' %}
+    {{dump(animales)}}
+    {{animales[4]}}
+    <h1>Holaaaa {{perro}}</h1>
+    {{dump(aves)}}
+    {{aves.tipo}}
+
+    {#condicional#}
+    {% if aves.tipo== 'palomo' %}
+        <h1>Cuidado un palomo volador</h1>
+    {% else %}
+        <h1> no es un palomo</h1>
+    {% endif %}
+
+    {# bucle #}
+    
+    {{ include('partials/funciones.html.twig') }}
+
+    <h1>Filtros</h1>
+    {{animales|length}}
+
+
+    {% set email='email@email.com' %}
+
+    {{dump(email|trim|upper)}}
+{% endblock %}

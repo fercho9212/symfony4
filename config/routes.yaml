@@ -1,3 +1,24 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+index:
+    path: /inicio
+    controller: App\Controller\DefaultController::index
+
+animales:
+    path: /animales/{nombre}/{apellidos}
+    controller: App\Controller\HomeController::animales
+    defaults:  { nombre: 'ferneyJerez', apellidos: 'jerez'}
+    methods:  [GET]
+    requirements:
+      nombre: '[a-zA-Z]+'
+      apellidos:  '[0-9]+'
+
+redirigir:
+  path: /redirigir
+  controller: App\Controller\HomeController::redirigir
+
+Animal_index:
+  path: /animal/index
+  controller: App\Controller\AnimalController::index
+
+Animal_save:
+  path: /animal/save
+  controller: App\Controller\AnimalController::save
