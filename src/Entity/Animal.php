@@ -42,17 +42,24 @@ class Animal
      */
     private $raza;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="texto", type="string", length=50, nullable=false)
+     */
+    private $texto;
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getTipo(): ?int
+    public function getTipo(): ?string
     {
         return $this->tipo;
     }
 
-    public function setTipo(int $tipo): self
+    public function setTipo(string $tipo): self
     {
         $this->tipo = $tipo;
 
@@ -71,11 +78,7 @@ class Animal
         return $this;
     }
 
-    public function getRaza(): ?string
-    {
-        return $this->raza;
-    }
-
+    
     public function setRaza(string $raza): self
     {
         $this->raza = $raza;
@@ -83,5 +86,20 @@ class Animal
         return $this;
     }
 
+    public function getRaza() : ? string
+    {
+        return $this->raza;
+    }
+    
+    public function setTexto(string $raza) : self
+    {
+        $this->raza = $raza;
+
+        return $this;
+    }
+    public function getTexto() : ? string
+    {
+        return $this->texto;
+    }
 
 }

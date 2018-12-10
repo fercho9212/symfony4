@@ -16,6 +16,7 @@ php bin/console doctrine:mapping:import 'App\Entity' annotation --path=src/Entit
 php bin/console make:Entity --regenerate App                        #Convierte los sets y gets
 php bin/console make:entity --regenerate  App\\Entity\\Usuario #sets y gets de una entidad especifica
 #En caso de error agregar a la entidad    namespace App\Entity;
+php bin/console doctrine:schema:update --force   #Acualiza la base de datos deacuerdo a la ralizazo en la entidades
 
 
 ########################### DE ENTIDAD A BASE DE DATOS ############################################
@@ -33,7 +34,10 @@ php bin/console doctrine:database:drop --force #borra una base de datos
 php bin/console make:crud    --Genera un crud para la base de datos
 
 
+########################### CONSULTA SQL #####################################
+ php bin/console doctrine:query:sql "SELECT * FROM ANIMALES"
   
+
 #Generando entidades apartir de una base de datos
 1) Configurar archivo .env
  php bin/console doctrine:mapping:import 'App\Entity' annotation --path=src/Entity  #Crea las entidades con los respectivos atributos
